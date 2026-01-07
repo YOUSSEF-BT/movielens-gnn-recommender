@@ -36,77 +36,53 @@ Tu peux ajouter une cellule (optionnelle) au début :
 !unzip -q ml-100k.zip
 !cp ml-100k/u.data .
 !cp ml-100k/u.item .
-Installation (Colab)
 ```
+## Installation (Colab)
 
 Le notebook installe les dépendances principales :
-
 torch, torchvision, torchaudio
-
 torch-geometric
-
 pandas, networkx, matplotlib (souvent déjà disponibles sur Colab)
-
 Dans Colab : Runtime > Run all après l’installation.
 
-Étapes principales du notebook
+##  Étapes principales du notebook
 
 Installation des librairies
-
 Importation du dataset (u.data + u.item)
-
 Préprocessing
-
 Re-indexation des user_id et item_id à partir de 0
-
 Décalage des IDs movies (movie_offset) pour éviter le chevauchement avec les users
-
 Construction de edge_index pour PyTorch Geometric
-
 Mini-LightGCN
-
 Embeddings pour chaque nœud (users + movies)
-
 Propagation simple sur le graphe pour produire une représentation (node_repr)
-
 Recommandations Top-N
-
 Score(user, movie) via produit scalaire
-
 Filtrage des films déjà vus par l’utilisateur
-
 Affichage des films recommandés
-
 Visualisation
-
 Échantillon de quelques interactions (ex: 400)
-
 Affichage du mini-graphe avec NetworkX
 
-Résultat attendu
+## Résultat attendu
 
 À la fin, tu dois obtenir :
-
 Un tableau/listing des Top-N films recommandés pour un USER_ID
-
 Une visualisation d’un sous-graphe user–movie
 
-Exécution rapide (checklist)
+## Exécution rapide (checklist)
 
  Ouvrir GNN_Recommender.ipynb dans Colab
-
  Avoir u.data et u.item disponibles dans l’espace de fichiers Colab
-
  Exécuter toutes les cellules dans l’ordre
-
  Tester avec différents USER_ID
 
-Remarques
+## Remarques
 
 Le modèle “Mini-LightGCN” est une version simplifiée pour le TP (pédagogique).
-
 Les recommandations dépendent de l’étape de représentation (embeddings + propagation) telle qu’implémentée dans le notebook.
 
-Auteur
+## Auteur
 
+Youssef bouzit 
 TP réalisé pendant le cours — implémentation et exécution sur Google Colab.
